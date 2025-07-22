@@ -1,0 +1,101 @@
+.custom-flip-card-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0 0;
+}
+.custom-flip-card {
+  background: transparent;
+  width: 320px;
+  height: 420px;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+  transform-style: preserve-3d;
+}
+.custom-flip-card:hover .custom-flip-card-inner {
+  transform: rotateY(180deg);
+}
+.custom-flip-card-front, .custom-flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.custom-flip-card-front {
+  z-index: 2;
+}
+.custom-flip-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.custom-flip-card-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 1.5px solid #eaeaea;
+}
+.custom-flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  z-index: 3;
+}
+.custom-flip-card-back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 18px;
+}
+.custom-flip-card-back-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+.custom-flip-card-back-desc {
+  font-size: 1.05rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.7;
+}
+@media (max-width: 480px) {
+  .custom-flip-card {
+    width: 90vw;
+    height: 60vw;
+    min-width: 220px;
+    min-height: 280px;
+    max-width: 320px;
+    max-height: 420px;
+  }
+  .custom-flip-card-img {
+    width: 60vw;
+    height: 60vw;
+    max-width: 220px;
+    max-height: 220px;
+  }
+}
